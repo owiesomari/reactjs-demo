@@ -4,10 +4,10 @@ class dataGrid extends Component {
         const { data, columns } = this.props
         return (
             <div>
-                <table className="table table-striped">
+                <table className="table table-striped table-bordered">
                     <thead>
-                        <tr>
-                            {columns.map(function (i) { return <th>{i}</th> })}
+                        <tr style={{backgroundColor:"#F25308",color:"white"}}>
+                            {columns.map(function (i) { return <th>{i.toUpperCase()}</th> })}
                         </tr>
                     </thead>
                     <tbody>

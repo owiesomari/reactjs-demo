@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import assetsdata from './data/assets'
+import employeesData from './data/employees'
 import DataGrid from "./components/dataGrid"
-import assetsdata from './assets'
-import employeesData from './employees'
-
 import NavBar from "./components/navbar"
 import Home from "./components/home"
 import 'bootstrap/dist/css/bootstrap.css'
-import { BrowserRouter, Route } from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -16,9 +15,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-
         <div >
           <NavBar />
+          <br /><br />
           <div className="container">
             <Route exact path="/" component={Home} />
             <Route path="/assets" component={() => <DataGrid data={this.state.assetsData} columns={["id", "name", "location", "Code"]} />}></Route>
@@ -26,7 +25,6 @@ class App extends Component {
           </div>
         </div>
       </BrowserRouter>
-
     )
   }
 }
